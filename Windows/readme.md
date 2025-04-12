@@ -1,0 +1,1 @@
+NukeCGDenoiser was compiled with - [Intel's OpenImageDenoise 2.1.0](https://github.com/RenderKit/oidn/releases/tag/v2.1.0) Downloaded files from /oidn/bin/ copy to C:\Program Files\Nuke<version> folder.
