@@ -1,0 +1,9 @@
+
+
+rm -rf build && mkdir build && cd build
+
+cmake -DNUKE_VERSION=16.0v6 \
+      -DOIDN_ROOT=/opt/oidn-install-static \
+      ..
+
+make -j$(nproc)
