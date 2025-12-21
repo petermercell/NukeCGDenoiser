@@ -20,7 +20,7 @@ This is a fork of [mateuszwojt/NukeCGDenoiser](https://github.com/mateuszwojt/Nu
 
 ## Installation
 
-Simply copy the `Denoiser.so` (Linux) or `Denoiser.dylib` (macOS) to your Nuke plugin path. No additional libraries or dependencies are required – everything is statically linked.
+Simply copy the `Denoiser.so` (Linux) or `Denoiser.dylib` (macOS) to your Nuke plugin path. No additional libraries or dependencies are required – everything is statically linked. Pre-built binaries you can download on my [Patreon page](https://www.patreon.com/posts/optixdenoiser-146357964).
 
 ## Usage
 
