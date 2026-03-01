@@ -1,0 +1,31 @@
+# ============================================================
+# Building NukeCGDenoiser with Dynamic OIDN 2.4.1 (GPU + CPU)
+# ============================================================
+
+# 1. Clean build
+rm -rf build && mkdir build && cd build
+
+# 2. Configure - point to your OIDN 2.4.1 installation
+cmake -DNUKE_VERSION=17.0v1 \
+      -DOIDN_ROOT=/home/pm/Downloads/NukeCGDenoiser-master/oidn2.4.1 \
+      ..
+
+# 3. Build
+make -j$(nproc)
+
+# Output: build/lib/Denoiser.so
+
+# ============================================================
+# Runtime Setup
+# ============================================================
+#
+# The plugin has RPATH baked in pointing to your OIDN lib directory,
+# so it should find libOpenImageDenoise.so automatically.
+#
+# For GPU support, OIDN loads device libraries dynamically at runtime:
+#   - CUDA (NVIDIA):  libOpenImageDenoise_device_cuda.so  (must be in OIDN lib dir)
+#   - SYCL (Intel):   libOpenImageDenoise_device_sycl.so
+#   - HIP (AMD):      libOpenImageDenoise_device_hip.so
+#
+# These are part of the OIDN distribution and should already be in
+# your oidn2.4.1/lib directory if you downloaded the right package.
