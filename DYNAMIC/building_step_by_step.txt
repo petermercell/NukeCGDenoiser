@@ -29,3 +29,21 @@ make -j$(nproc)
 #
 # These are part of the OIDN distribution and should already be in
 # your oidn2.4.1/lib directory if you downloaded the right package.
+
+
+WIN:
+
+cd C:\Users\WORKSTATION\Downloads\NukeCGDenoiser-master\NukeCGDenoiser-master\DYNAMIC
+
+rmdir /s /q build
+mkdir build
+cd build
+
+cmake .. -G "Visual Studio 17 2022" -A x64 ^
+  -DCMAKE_INSTALL_PREFIX=%USERPROFILE%/.nuke ^
+  -DCMAKE_PREFIX_PATH="C:/Program Files/Nuke17.1v1;C:/oidn-2.5.1.x64.windows" ^
+  -DOpenImageDenoise_INCLUDE_DIR="C:/oidn-2.5.1.x64.windows/include" ^
+  -DOpenImageDenoise_LIBRARY="C:/oidn-2.5.1.x64.windows/lib/OpenImageDenoise.lib"
+
+
+cmake --build . --config Release --verbose
