@@ -30,6 +30,7 @@ make -j$(nproc)
 # These are part of the OIDN distribution and should already be in
 # your oidn2.4.1/lib directory if you downloaded the right package.
 
+////
 
 WIN:
 
@@ -47,3 +48,16 @@ cmake .. -G "Visual Studio 17 2022" -A x64 ^
 
 
 cmake --build . --config Release --verbose
+
+////
+
+MAC:
+
+cd /Users/g/Downloads/NukeCGDenoiser-master/DYNAMIC
+rm -rf build && mkdir build && cd build
+
+cmake -DNUKE_VERSION=17.1v1 \
+      -DOIDN_ROOT=/Users/g/Documents/oidn-2.5.1.arm64.macos \
+      ..
+
+make -j$(sysctl -n hw.ncpu) 
